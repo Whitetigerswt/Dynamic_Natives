@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\SA-MP SDK">
+      <UniqueIdentifier>{d21ffc60-42a2-4b6c-b32d-d9437604869b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SA-MP SDK">
+      <UniqueIdentifier>{3d00114a-9b60-4912-87a5-c426b230b468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SubHook">
+      <UniqueIdentifier>{5250783b-45d6-4e10-84a2-084aedf1318a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SubHook">
+      <UniqueIdentifier>{38a7c92c-4716-48f8-968d-a5fdd423e21b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\sampgdk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plugincommon.h">
+      <Filter>Header Files\SA-MP SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plugin.h">
+      <Filter>Header Files\SA-MP SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amx\amx.h">
+      <Filter>Header Files\SA-MP SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amx\getch.h">
+      <Filter>Header Files\SA-MP SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amx\sclinux.h">
+      <Filter>Header Files\SA-MP SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\subhook.h">
+      <Filter>Header Files\SubHook</Filter>
+    </ClInclude>
+    <ClInclude Include="src\subhook_private.h">
+      <Filter>Header Files\SubHook</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Source.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\sampgdk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amxplugin.cpp">
+      <Filter>Source Files\SA-MP SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\subhook.c">
+      <Filter>Source Files\SubHook</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
