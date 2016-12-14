@@ -1,11 +1,11 @@
 What's this?
 ==========
 Have you ever been making a SA-MP plugin, and you just got the ever so common, "File or Function not found"? This error is extremely useful, and it is a good thing the server does not continue executing when this error comes up.
-However, sometimes it may be useful to include information about what is missing. What file or function is not found? Thus NativeChecker was born. The Native Checker plugin tells you which function was not found.
+However, sometimes it may be useful to include information about what is missing. What file or function is not found? Thus NativeChecker was born. The Native Checker plugin tells you which function was not found. This plugin is a proof-of-concept that the "File or Function not found" error can be completely eliminated.
 
-How can plugin developers include more information natively in their scripts to avoid this error?
+What's the difference between this and NativeChecker?
 ==========
-Well, up until now, you couldn't. However, I was working on a plugin and decided to investigate a little further to see if this could be avoided in a way. This plugin is a fork of SAMP_AC_v2 with just the file or function not found errors fixed up in an example script.
+This allows you to put your own custom error messages if a plugin is not loaded. Or maybe, you could run your gamemode or filterscript in a less-than-complete mode without an error and recover from the "file or function not found" error.
 
 How might this be useful?
 ==========
@@ -22,4 +22,13 @@ public OnFilterScriptInit()
 }
 ```
 
-Which can provide a lot better information to servers than just "File or function not found", or even "Function not found: MapAndreas_FindZ".
+Which can provide a lot better information to servers than just "File or function not found", or even "Function not found: MapAndreas_FindZ". It allows people to understand why something may have went wrong when they are installing your gamemode, filterscript, or include. This is valuable so that you can make your gamemode or filterscript run with or without plugins.
+
+
+How does it work?
+==========
+This plugin hooks the native GetGravity from the AMX list. It uses this native, but it really does not matter which native you use. Any native can be hooked and achieve the same effect, it does not mess up the original "GetGravity" native.
+
+Since PAWN allows us to pass params to natives even if they don't use them, this plugin takes advantage of that. Everytime GetGravity is called, it checks if an extra parameter is attached to it, a string, which is the "real" function name. If the extra param is there, we call that function instead of GetGravity. This allows all plugin natives to be defined by a proxy native which is GetGravity. In reality, you are calling a defined native "GetGravity". Only, if the plugin is loaded, GetGravity is hooked.
+
+Other parameters can be added onto natives to have multi-paramed functions. No functionality in plugins will be lost if implemented correctly.

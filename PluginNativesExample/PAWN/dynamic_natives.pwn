@@ -10,7 +10,5 @@ native plugin_gateway_param0(func[]) = GetGravity;
 
 public OnFilterScriptInit()
 {
-	printf("%f", GetGravity());
-	printf("%f", plugin_gateway_param0("IsPluginLoaded"));
 	printf("Plugin loaded: %d", IsPluginLoaded());
 }
