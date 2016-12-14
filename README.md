@@ -29,6 +29,8 @@ How does it work?
 ==========
 This plugin hooks the native GetGravity from the AMX list. It uses this native, but it really does not matter which native you use. Any native can be hooked and achieve the same effect, it does not mess up the original "GetGravity" native.
 
-Since PAWN allows us to pass params to natives even if they don't use them, this plugin takes advantage of that. Everytime GetGravity is called, it checks if an extra parameter is attached to it, a string, which is the "real" function name. If the extra param is there, we call that function instead of GetGravity. This allows all plugin natives to be defined by a proxy native which is GetGravity. In reality, you are calling a defined native "GetGravity". Only, if the plugin is loaded, GetGravity is hooked.
+Since PAWN allows us to pass params to natives even if they don't use them, this plugin takes advantage of that. Everytime GetGravity is called, it checks if an extra parameter is attached to it, a string, which is the "real" function name. If the extra param is there, we call that function instead of GetGravity. This allows all plugin natives to be defined by a proxy native which is GetGravity. In reality, you are calling a defined native "GetGravity". Only, if the plugin is loaded, GetGravity is hooked. If the proxy native returns the same value as "GetGravity", then the plugin is not loaded, ASSUMING you are using a native that actually exists.
 
 Other parameters can be added onto natives to have multi-paramed functions. No functionality in plugins will be lost if implemented correctly.
+
+Here's an example include that is using this technique in another plugin: http://samp-ac.com/sampac.inc
